@@ -24,6 +24,7 @@ Increase the number of iterations (max_iter) or scale the data as shown in:
 Please also refer to the documentation for alternative solver options:
     https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
   n_iter_i = _check_optimize_result(
+
 Model: Logistic Regression
 Accuracy: 0.9216666666666666
 Classification Report:
@@ -45,6 +46,7 @@ Classification Report:
 weighted avg       0.92      0.92      0.92      8400
 
 ==================================================
+
 Model: Random Forest
 Accuracy: 0.9644047619047619
 Classification Report:
@@ -66,6 +68,7 @@ Classification Report:
 weighted avg       0.96      0.96      0.96      8400
 
 ==================================================
+
 Model: K-Nearest Neighbors
 Accuracy: 0.9648809523809524
 Classification Report:
@@ -125,6 +128,7 @@ Cause: closure mismatch, requested ('self', 'step_function'), but source functio
 To silence this warning, decorate the function with @tf.autograph.experimental.do_not_convert
 263/263 [==============================] - 3s 9ms/step
 263/263 [==============================] - 2s 6ms/step
+
 Model: Convolutional Neural Network
 Accuracy: 0.9810714285714286
 Classification Report:
@@ -146,6 +150,7 @@ Classification Report:
 weighted avg       0.98      0.98      0.98      8400
 
 ==================================================
+
 Model: Gradient Boosting
 Accuracy: 0.9417857142857143
 Classification Report:
@@ -167,4 +172,26 @@ Classification Report:
 weighted avg       0.94      0.94      0.94      8400
 
 ==================================================
+
+![image](https://github.com/sandeep822/Digit-Recognizer/assets/50867031/e99b9e5e-be29-4592-bacb-63fe52b31872)
+
+Receiver Operating Characteristic (ROC) curves and Area Under the Curve (AUC) scores for different machine learning models across various digit classes in the MNIST dataset. Each model, including Logistic Regression, Random Forest, K-Nearest Neighbors, Convolutional Neural Network (CNN), and Gradient Boosting, is assessed for its ability to distinguish between true positive and false positive rates for each digit category.
+
+The AUC scores close to 1.00 for most classes indicate excellent performance in terms of model sensitivity and specificity. Notably, all models, including Logistic Regression, Random Forest, K-Nearest Neighbors, CNN, and Gradient Boosting, exhibit high AUC scores across different digit classes, suggesting robust discriminative capabilities. The random line at a 45-degree angle represents a baseline performance, and the models consistently outperform this baseline, reinforcing their effectiveness.
+
+The ROC curves visually illustrate the trade-off between true positive and false positive rates, showcasing the models' discriminative power. Overall, the results indicate that each model excels in distinguishing between digits, further validating their suitability for the MNIST digit classification task.
+
+Hyperparameter Tuning (Using Random Forest)
+
+<img width="227" alt="image" src="https://github.com/sandeep822/Digit-Recognizer/assets/50867031/bb425edc-3833-49c8-9b47-caa9d85d82fc">
+
+RandomForestClassifier is an ensemble learning algorithm in scikit-learn that constructs a multitude of decision trees during training and outputs the mode of the classes for classification tasks. It combines the predictions of multiple individual trees to improve accuracy and generalization while minimizing overfitting. When used as an estimator in GridSearchCV, it facilitates the search for the best hyperparameters of the random forest model through an exhaustive search over a specified parameter grid.
+
+Confusion Matrix
+
+![image](https://github.com/sandeep822/Digit-Recognizer/assets/50867031/9c13ef58-bee8-4991-baf2-586864b61d6b)
+
+A comprehensive analysis of multiple machine learning models, including Logistic Regression, Random Forest, K-Nearest Neighbors, Convolutional Neural Network (CNN), and Gradient Boosting, was performed on a digit classification task. The models were evaluated using various techniques such as ROC curves, cross-validated accuracy plots, and hyperparameter tuning through Grid Search. The Random Forest model emerged as the top-performing classifier with an accuracy of approximately 96.5% on the validation set. Its hyperparameters, determined through Grid Search, were {'max_depth': None, 'min_samples_split': 2, 'n_estimators': 200}. The detailed evaluation, including ROC curves, a bar plot illustrating the impact of hyperparameters, and a confusion matrix, provided insights into each model's strengths and weaknesses. The Random Forest model demonstrated robust performance across multiple metrics, making it a promising choice for digit classification in this scenario.
+
+
 
